@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz de Perguntas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: darkgray;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: -1px 2px 3px #000;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question h3 {
+            margin-bottom: 10px;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .question input[type="radio"]:checked + label {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz de Perguntas</h1>
+    <div id="questions">
+        <div class="question">
+            <h3>1. Qual é a capital do Brasil?</h3>
+            <input type="radio" name="q1" value="a"> <label for="q1a">A. Brasília</label><br>
+            <input type="radio" name="q1" value="b"> <label for="q1b">B. Rio de Janeiro</label><br>
+            <input type="radio" name="q1" value="c"> <label for="q1c">C. São Paulo</label><br>
+        </div>
+        <div class="question">
+            <h3>2. Qual é a língua oficial do Brasil?</h3>
+            <input type="radio" name="q2" value="a"> <label for="q2a">A. Português</label><br>
+            <input type="radio" name="q2" value="b"> <label for="q2b">B. Alemão</label><br>
+            <input type="radio" name="q2" value="c"> <label for="q2c">C. Português e Alemão</label><br>
+        </div>
+        <div class="question">
+            <h3>3. Qual é a maior cidade do Brasil?</h3>
+            <input type="radio" name="q3" value="a"> <label for="q3a">A. São Paulo</label><br>
+            <input type="radio" name="q3" value="b"> <label for="q3b">B. Rio de Janeiro</label><br>
+            <input type="radio" name="q3" value="c"> <label for="q3c">C. Brasília</label><br>
+        </div>
+    </div>
+    <button onclick="checkAnswers()">Verificar Respostas</button>
+
+    <script>
+        function checkAnswers() {
+            var questions = document.getElementsByClassName("question");
+            var score = 0;
+
+            for (var i = 0; i < questions.length; i++) {
+                var question = questions[i];
+                var radios = question.querySelectorAll("input[type='radio']");
+
+                for (var j = 0; j < radios.length; j++) {
+                    var radio = radios[j];
+                    if (radio.checked && radio.value === "c") {
+                        score++;
+                    }
+                }
+            }
+
+            alert("Você acertou " + score + " respostas de " + questions.length);
+        }
+    </script>
+</body>
+</html>
