@@ -1,26 +1,21 @@
-def main():
-    score = 0
+# Criando uma lista de dados
+pessoas = [
+    {"nome": "João", "idade": 25},
+    {"nome": "Maria", "idade": 30},
+    {"nome": "Pedro", "idade": 20}
+]
 
-    print("Bem-vindo ao Quiz de Dança!")
+# Acessando os dados da lista
+print(pessoas[0]["nome"])  # Imprime "João"
+print(pessoas[1]["idade"])  # Imprime 30
 
-    # Pergunta 1
-    print("1. Qual é a principal parte do balé?")
-    print("A. Pés")
-    print("B. Mãos")
-    print("C. Peitor")
-    answer1 = input("Digite a letra da resposta: ")
-    if answer1.lower() == "b":
-        score += 1
+# Adicionando um novo item à lista
+novo_pessoa = {"nome": "Ana", "idade": 28}
+pessoas.append(novo_pessoa)
 
-    # Pergunta 2
-    print("2. Qual é a principal técnica de dança em um balé?")
-    print("A. Flexibilidade")
-    print("B. Coordenação")
-    print("C. Força")
-    answer2 = input("Digite a letra da resposta: ")
-    if answer2.lower() == "b":
-        score += 1
+# Removendo um item da lista
+pessoas.remove(pessoas[2])
 
-    # Pergunta 3
-    print("3. Qual é o nome do movimento em que as pernas se curvam para dentro?")
-
+# Iterando sobre a lista
+for pessoa in pessoas:
+    print(pessoa["nome"], pessoa["idade"])
