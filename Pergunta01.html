@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pergunta 01</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: darkslategrey;
+            text-shadow: -1px 2px 3px #000;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+           
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #answers {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #00ffff;
+            box-shadow: 2px 3px 4px #000;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+
+    <button onclick="askQuestions()">Responder Perguntas</button>
+
+    <h2>Suas Respostas:</h2>
+    <div id="answers"></div>
+
+    <script>
+        // Function to prompt for user information and display it on the page
+        function askQuestions() {
+            var name = prompt("Qual é o seu nome?");
+            var age = prompt("Qual é a sua idade?");
+            var height = prompt("Qual é a sua altura?");
+            var profession = prompt("Qual é a sua profissão?");
+            var favoriteSport = prompt("Qual é o seu esporte favorito?");
+            var rehearsalDate = prompt("Qual é a data do próximo ensaio? (Dia, Mês e Ano)");
+            var rehearsalTime = prompt("Qual é o horário do próximo ensaio? (Hora e Minuto)");
+            var showDate = prompt("Qual é a data do próximo show? (Dia, Mês e Ano)");
+            var showTime = prompt("Qual é o horário do próximo show? (Hora e Minuto)");
+
+            // Display the answers on the page
+            var answers = "Nome: " + name + "<br>Idade: " + age + " anos<br>Altura: " + height + " metros<br>Profissão: " + profession + "<br>Esporte Favorito: " + favoriteSport + "<br>Próximo Ensaio: " + rehearsalDate + " às " + rehearsalTime + "<br>Próximo Show: " + showDate + " às " + showTime;
+            document.getElementById("answers").innerHTML = answers;
+        }
+    </script>
+    <a href="Pergunta02.html">Programção 002</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas 002</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: darkslategrey;
+            text-shadow: -1px 2px 3px #000;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+           
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #answers {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #00ffff;
+            box-shadow: 2px 3px 4px #000;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+  <h1> Answer the questions. </h1>
+    <H1> For your dance assessment 001 </h1>
+    <h1> Abizael Questionnaire. </h1>
+    <H2> </H2>
+
+    <button onclick="askQuestions()">Responder Perguntas</button>
+
+    <h2>Your answers:</h2>
+    <div id="answers"></div>
+
+    <script>
+        // Function to prompt for user information and display it on the page
+        function askQuestions() {
+            var name = prompt("Qual é o seu nome?");
+            var age = prompt("Qual é a sua idade?");
+            var profession = prompt("Qual é a sua profissão?");
+            var choreographiesToday = prompt("Quais coreografias você está dançando hoje?");
+            var choreographyReady = prompt("Você tem alguma coreografia pronta hoje? (Sim ou Não)");
+            var choreographyName = prompt("Nome da coreografia que está ensaiando hoje");
+            var choreographyDuration = prompt("Qual é o tempo de duração dessa coreografia?");
+
+            // Display the answers on the page
+            var answers = "Nome: " + name + "<br>Idade: " + age + " anos<br>Profissão: " + profession + "<br>Coreografias Dançando Hoje: " + choreographiesToday + "<br>Coreografia Pronta Hoje: " + choreographyReady + "<br>Nome da Coreografia: " + choreographyName + "<br>Tempo da Coreografia: " + choreographyDuration;
+            document.getElementById("answers").innerHTML = answers;
+        }
+    </script>
+
+</body>
+</html>
